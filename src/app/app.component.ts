@@ -97,7 +97,6 @@ export class AppComponent {
     const encryptedLanguage = localStorage.getItem("language");
     const selectedLanguage = encryptedLanguage ? this.decrypt(encryptedLanguage) : null;
     const browserLanguage = navigator.language.substr(0, 2).toUpperCase();
-    const defaultLanguage = selectedLanguage === "EN" ? 'EN' : 'CZ';
     if (selectedLanguage && (selectedLanguage === "EN" || selectedLanguage === "CZ")) {
       this.translate.currentLang = selectedLanguage;
     } else {
@@ -122,20 +121,22 @@ export class AppComponent {
   }
 
   initializeDarkMode(): void {
-    const userDarkModePreference = localStorage.getItem("darkMode");
+    const encryptedDarkMode = localStorage.getItem("darkMode");
+    const userDarkModePreference = encryptedDarkMode ? this.decrypt(encryptedDarkMode) : null;
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (userDarkModePreference === "dark" || userDarkModePreference === "light") {
       document.body.classList.toggle('dark-mode', userDarkModePreference === 'dark');
       if (userDarkModePreference === "dark") {
-        this.darkmode = !this.darkmode;
+        this.darkmode = true;
       }
     } else if (prefersDarkMode) {
       document.body.classList.add('dark-mode');
-      localStorage.setItem("darkMode", "dark");
-      this.darkmode = !this.darkmode;
+      localStorage.setItem("darkMode", this.encrypt("dark"));
+      this.darkmode = true;
     } else {
       document.body.classList.remove('dark-mode');
-      localStorage.setItem("darkMode", "light");
+      localStorage.setItem("darkMode", this.encrypt("light"));
+      this.darkmode = false;
     }
   }
 
@@ -168,6 +169,12 @@ export class AppComponent {
     this.search = "";
   }
 
+  blurWithDelay(): void {
+    setTimeout(() => {
+      this.isFocused = false;
+    }, 200);
+  }
+
   focus(): void {
     this.isFocused = true;
   }
@@ -177,20 +184,22 @@ export class AppComponent {
   }
 
   switchLanguage(lang: string): Observable<any> {
-    localStorage.setItem("language", lang);
+    localStorage.setItem("language", this.encrypt(lang));
     return this.translate.use(lang);
   }
 
   switchDarkmode(): void {
-    const userDarkModePreference = localStorage.getItem("darkMode");
+    const encryptedDarkMode = localStorage.getItem("darkMode");
+    const userDarkModePreference = encryptedDarkMode ? this.decrypt(encryptedDarkMode) : null;
     if (userDarkModePreference === "dark") {
       document.body.classList.remove('dark-mode');
-      localStorage.setItem("darkMode", "light");
+      localStorage.setItem("darkMode", this.encrypt("light"));
+      this.darkmode = false;
     } else {
       document.body.classList.add('dark-mode');
-      localStorage.setItem("darkMode", "dark");
+      localStorage.setItem("darkMode", this.encrypt("dark"));
+      this.darkmode = true;
     }
-    this.darkmode = !this.darkmode;
   }
 
   openCloseNav(): void {

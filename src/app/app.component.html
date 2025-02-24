@@ -7,14 +7,17 @@
       </div>
       <div id="hledaci_bunka">
         <input id="hledat" type="text" name="search" [(ngModel)]="search" autocomplete="off"
-          placeholder="{{ 'APP.hledat' | translate }}" (focus)="focus()" (blur)="blur()">
+          placeholder="{{ 'APP.hledat' | translate }}" 
+          (focus)="focus()" 
+          (blur)="blurWithDelay()">
         <img id="lupa" src="assets/icon/svg/search.svg">
         <ul id="search_result_ul" *ngIf="search && search.length >= 1 && isFocused">
-          <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" (click)="getRoute(item)">
+          <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" 
+              (mousedown)="getRoute(item)">
             {{ item }}
           </li>
         </ul>
-      </div>
+      </div>      
       <label id="darkmode">
         <input id="checkbox" type="checkbox" (change)="switchDarkmode()" [checked]="darkmode === false">
         <span id="slider"></span>
