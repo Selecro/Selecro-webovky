@@ -43,6 +43,8 @@ export class PrihlaseniComponent implements OnInit {
           kekSalt = response1.kekSalt;
           wrappedDEK = response1.wrappedDEK;
           initializationVector = response1.initializationVector;
+          this.setLanguage(response1.language);
+          this.setDarkmode(response1.darkmode);
           return this.kmsService.userpassLogin(response1.id, this.password);
         }),
         switchMap(response2 => {
@@ -140,5 +142,20 @@ export class PrihlaseniComponent implements OnInit {
         }
       );
     }
+  }
+
+  setLanguage(language: string): void {
+    this.translate.currentLang = language;
+    this.translate.setDefaultLang(language);
+    this.translate.use(language);
+    localStorage.setItem("language", this.encrypt(language));
+  }
+
+  setDarkmode(darkmode: boolean): void {
+    localStorage.setItem("darkmode", this.encrypt(darkmode.toString()));
+  }
+
+  encrypt(text: string): string {
+    return CryptoJS.AES.encrypt(text, 'secret-key').toString();
   }
 }

@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SafePipe } from './safe.pipe';
-import { LocationStrategy, PathLocationStrategy  } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@angular/common';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -60,7 +60,7 @@ import { LoadingComponent } from './pages/loading/loading.component';
       }
     })
   ],
-  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}, TranslateService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

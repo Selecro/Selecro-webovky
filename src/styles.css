@@ -78,12 +78,12 @@ i {
 
 .form-control {
     background-color: var(--background-color);
-    color: var(--background-color-invert);
+    color: var(--text-color-black-and-white);
 }
 
 .form-control:focus {
     background-color: var(--background-color);
-    color: var(--background-color-invert);
+    color: var(--text-color-black-and-white);
 }
 
 #container {
