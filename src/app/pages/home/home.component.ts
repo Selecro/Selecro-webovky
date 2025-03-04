@@ -71,6 +71,8 @@ export class HomeComponent implements OnInit {
   private animate(): void {
     requestAnimationFrame(() => this.animate());
     if (this.model) {
+      this.model.rotation.z += 0.005;
+      this.model.rotation.x += 0.005;
       this.model.rotation.y += 0.005;
     }
     if (this.renderer && this.camera) {
