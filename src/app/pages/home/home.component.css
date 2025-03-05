@@ -79,3 +79,62 @@
         gap: 33px;
     }
 }
+
+#instagram-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+  }
+  
+  .instagram-post-content {
+    width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   }
+  
+  .instagram-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .instagram-image {
+    width: 100%;
+    display: block;
+  }
+  
+  .instagram-description {
+    padding: 10px;
+    color: #333;
+    display: block;
+  }
+  
+  .instagram-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #3897f0;
+    font-weight: bold;
+    text-decoration: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .instagram-link:hover {
+    background: #f7f7f7;
+  }
+  

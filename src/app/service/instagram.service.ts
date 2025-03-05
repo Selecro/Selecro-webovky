@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,26 +13,20 @@ export class InstagramService {
 
   constructor(private http: HttpClient) { }
 
-  // Používáme HttpClient pro získání nejnovějšího příspěvku
-  getLatestPost(): Observable<any> {
-    const url = `${this.apiUrl}/${this.userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${this.accessToken}`;
-    return this.http.get<any>(url);
-  }
+  // Získání posledního příspěvku a uživatelských informací současně
+  getLatestPostWithUserInfo(): Observable<any> {
+    const postUrl = `${this.apiUrl}/${this.userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${this.accessToken}`;
+    const userUrl = `${this.apiUrl}/${this.userId}?fields=username,profile_picture_url&access_token=${this.accessToken}`;
 
-  // Získání základních informací o uživatelském účtu
-  public async getAccountInfo(): Promise<any> {
-    const url = `${this.apiUrl}/${this.userId}?fields=id,username&access_token=${this.accessToken}`;
-    const response = await fetch(url);
-
-    const data = await response.json();
-    return data;
-  }
-
-  // Získání médií uživatele (nepoužívá se v aktuálním kódu, ale může být užitečné pro rozšíření)
-  public async getUserMedia(): Promise<any> {
-    const url = `${this.apiUrl}/${this.userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${this.accessToken}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    return forkJoin({
+      post: this.http.get<any>(postUrl),
+      user: this.http.get<any>(userUrl)
+    }).pipe(
+      map(({ post, user }) => ({
+        latestPost: post.data ? post.data[0] : null, // Získáme nejnovější příspěvek
+        username: user.username,
+        profilePicture: user.profile_picture_url
+      }))
+    );
   }
 }
