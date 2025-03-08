@@ -5,8 +5,8 @@ import { Difficulty, Instruction, Step } from 'src/app/types';
 const poleInstructiony: Array<Instruction> = [
   {
     id: "sf45",
-    titleCz: "HaroldCz",
-    titleEn: "HaroldEn",
+    titleCz: "Harold",
+    titleEn: "Harold",
     difficulty: Difficulty.hard,
     premium: true,
     finished: true,
@@ -28,6 +28,118 @@ const poleInstructiony: Array<Instruction> = [
         descriptionCz: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po"],
         descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"],
         instructionId: "sf45"
+      }
+    ]
+  },
+  {
+    id: "mk87",
+    titleCz: "Boris",
+    titleEn: "Boris",
+    difficulty: Difficulty.medium,
+    premium: false,
+    finished: false,
+    date: new Date(),
+    userId: "pl12mn",
+    steps: [
+      {
+        id: "hg47s",
+        titleCz: "Tělo",
+        titleEn: "Body",
+        descriptionCz: ["Mk (10)", "V", "ks, V", "2 ks, V", "3 ks, V", "ks (8 řad)", "3 ks, A", "2 ks, A", "ks, A", "Po"],
+        descriptionEn: ["Mr (10)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "Sc (8 rows)", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "SlSt"],
+        instructionId: "mk87"
+      },
+      {
+        id: "xn53d",
+        titleCz: "Ocas",
+        titleEn: "Tail",
+        descriptionCz: ["Mk (6)", "V", "ks, V", "2 ks, V", "ks (6 řad)", "2 ks, A", "ks, A", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (6 rows)", "2Sc, Dec", "Sc, Dec", "SlSt"],
+        instructionId: "mk87"
+      }
+    ]
+  },
+  {
+    id: "pl92",
+    titleCz: "Alice",
+    titleEn: "Alice",
+    difficulty: Difficulty.easy,
+    premium: true,
+    finished: true,
+    date: new Date(),
+    userId: "zt45hk",
+    steps: [
+      {
+        id: "vk93s",
+        titleCz: "Noha",
+        titleEn: "Leg",
+        descriptionCz: ["Mk (6)", "V", "ks, V", "ks (5 řad)", "ks, A", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "Sc (5 rows)", "Sc, Dec", "SlSt"],
+        instructionId: "pl92"
+      },
+      {
+        id: "tr56q",
+        titleCz: "Ucho",
+        titleEn: "Ear",
+        descriptionCz: ["Mk (6)", "V", "ks, V", "2 ks, V", "ks, A", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc, Dec", "SlSt"],
+        instructionId: "pl92"
+      }
+    ]
+  },
+  {
+    id: "tn45",
+    titleCz: "Oliver",
+    titleEn: "Oliver",
+    difficulty: Difficulty.hard,
+    premium: true,
+    finished: false,
+    date: new Date(),
+    userId: "rt88po",
+    steps: [
+      {
+        id: "ol76p",
+        titleCz: "Tělo",
+        titleEn: "Body",
+        descriptionCz: ["Mk (8)", "V", "ks, V", "2 ks, V", "ks (10 řad)", "2 ks, A", "ks, A", "Po"],
+        descriptionEn: ["Mr (8)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (10 rows)", "2Sc, Dec", "Sc, Dec", "SlSt"],
+        instructionId: "tn45"
+      },
+      {
+        id: "qz94s",
+        titleCz: "Oči",
+        titleEn: "Eyes",
+        descriptionCz: ["Mk (4)", "V", "ks, V", "Po"],
+        descriptionEn: ["Mr (4)", "Inc", "Sc, Inc", "SlSt"],
+        instructionId: "tn45"
+      }
+    ]
+  },
+  {
+    id: "xy73",
+    titleCz: "Sophie",
+    titleEn: "Sophie",
+    difficulty: Difficulty.easy,
+    premium: false,
+    finished: true,
+    date: new Date(),
+    userId: "lm45qs",
+    steps: [
+      {
+        id: "ld65z",
+        titleCz: "Ruka",
+        titleEn: "Arm",
+        descriptionCz: ["Mk (6)", "V", "ks (6 řad)", "ks, A", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc (6 rows)", "Sc, Dec", "SlSt"],
+        instructionId: "xy73"
+      },
+      {
+        id: "mv82k",
+        titleCz: "Čepice",
+        titleEn: "Hat",
+        descriptionCz: ["Mk (6)", "V", "ks, V", "2 ks, V", "ks (4 řady)", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (4 rows)", "SlSt"],
+        instructionId: "xy73"
       }
     ]
   }
