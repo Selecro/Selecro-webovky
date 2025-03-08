@@ -12,7 +12,6 @@
   "dependencies": {
     "@angular-devkit/build-angular": "^19.0.1",
     "@angular/animations": "^19.0.3",
-    "@angular/cli": "^19.0.1",
     "@angular/common": "^19.0.3",
     "@angular/compiler": "^19.0.3",
     "@angular/compiler-cli": "^19.0.3",
@@ -35,6 +34,7 @@
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
+    "@angular/cli": "^19.2.1",
     "@types/crypto-js": "^4.2.2",
     "@types/jasmine": "^5.1.4",
     "@types/jest": "^29.5.14",
