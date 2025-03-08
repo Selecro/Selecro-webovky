@@ -30,9 +30,11 @@ export class AppComponent {
   pomucky: Pomucka[] | undefined;
   darkmode: boolean = false;
   isFocused: boolean = false;
+  showBanner: boolean = true;
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
     this.loadResources();
+    this.initializeCookies();
     this.initializeLanguage();
     this.initializeDarkMode();
     if (window.innerWidth > 1100) {
@@ -140,6 +142,16 @@ export class AppComponent {
     }
   }
 
+  initializeCookies(): void {
+    const encryptedCookieConsent = localStorage.getItem("cookieConsent");
+    const selectedCookieConsent = encryptedCookieConsent ? this.decrypt(encryptedCookieConsent) : null;
+    if (selectedCookieConsent && selectedCookieConsent === "accepted") {
+      this.showBanner = false;
+    } else {
+      this.showBanner = true;
+    }
+  }
+
   loadResources(): void {
     this.slovnik = this.slovnikService.getVsechnyStyly();
     this.pomucky = this.pomuckyService.getVsechnyPomucky();
@@ -200,6 +212,11 @@ export class AppComponent {
       localStorage.setItem("darkMode", this.encrypt("dark"));
       this.darkmode = true;
     }
+  }
+
+  acceptCookies(): void {
+    localStorage.setItem("cookieConsent", this.encrypt("accepted"));
+    this.showBanner = false;
   }
 
   openCloseNav(): void {

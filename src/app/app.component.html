@@ -7,17 +7,14 @@
       </div>
       <div id="hledaci_bunka">
         <input id="hledat" type="text" name="search" [(ngModel)]="search" autocomplete="off"
-          placeholder="{{ 'APP.hledat' | translate }}" 
-          (focus)="focus()" 
-          (blur)="blurWithDelay()">
+          placeholder="{{ 'APP.hledat' | translate }}" (focus)="focus()" (blur)="blurWithDelay()">
         <img id="lupa" src="assets/icon/svg/search.svg">
         <ul id="search_result_ul" *ngIf="search && search.length >= 1 && isFocused">
-          <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" 
-              (mousedown)="getRoute(item)">
+          <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" (mousedown)="getRoute(item)">
             {{ item }}
           </li>
         </ul>
-      </div>      
+      </div>
       <label id="darkmode">
         <input id="checkbox" type="checkbox" (change)="switchDarkmode()" [checked]="darkmode === false">
         <span id="slider"></span>
@@ -42,7 +39,7 @@
           {{ 'APP.pomucky' | translate }}
           <img src="assets/icon/svg/down.svg" #img_pomucky>
         </div>
-        <div id="blok2_container"  #menu_pomucky>
+        <div id="blok2_container" #menu_pomucky>
           <ng-container *ngFor="let term of pomucky">
             <a id="pomucky" (click)="openCloseNav();hidePomucky()" [routerLink]="'/pomucky/' + term.nazev">
               {{ term.title | translate }}
@@ -74,5 +71,25 @@
       </div>
     </div>
     <router-outlet></router-outlet>
+  </div>
+  <div class="cookie-banner" *ngIf="showBanner">
+    <p>
+      {{ 'APP.cookie0' | translate }}
+      <a routerLink="/cookies-policy">
+        {{ 'APP.cookie1' | translate }}
+      </a>
+      {{ 'APP.cookie2' | translate }}
+      <a routerLink="/terms-of-service">
+        {{ 'APP.cookie3' | translate }}
+      </a>
+      {{ 'APP.cookie4' | translate }}
+      <a routerLink="/privacy-policy">
+        {{ 'APP.cookie5' | translate }}
+      </a>
+      .
+    </p>
+    <button (click)="acceptCookies()">
+      {{ 'APP.cookie6' | translate }}
+    </button>
   </div>
 </div>

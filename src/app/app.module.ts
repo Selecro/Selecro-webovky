@@ -24,6 +24,11 @@ import { VerificationComponent } from './pages/verification/verification.compone
 import { FilterPipe } from './filter.pipe';
 import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
 import { LoadingComponent } from './pages/loading/loading.component';
+import { DisclaimerComponent } from './pages/disclaimer/disclaimer.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { ReturnAndRefundPolicyComponent } from './pages/return-and-refund-policy/return-and-refund-policy.component';
+import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service.component';
+import { CookiesPolicyComponent } from './pages/cookies-policy/cookies-policy.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +48,11 @@ import { LoadingComponent } from './pages/loading/loading.component';
     FilterPipe,
     PasswdchangeComponent,
     LoadingComponent,
+    CookiesPolicyComponent,
+    DisclaimerComponent,
+    PrivacyPolicyComponent,
+    ReturnAndRefundPolicyComponent,
+    TermsOfServiceComponent,
   ],
   imports: [
     BrowserModule,

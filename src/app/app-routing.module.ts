@@ -13,6 +13,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
 import { AuthGuard } from './service/auth.guard';
+import { CookiesPolicyComponent } from './pages/cookies-policy/cookies-policy.component';
+import { DisclaimerComponent } from './pages/disclaimer/disclaimer.component';
+import { ReturnAndRefundPolicyComponent } from './pages/return-and-refund-policy/return-and-refund-policy.component';
+import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +33,11 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'verification', component: VerificationComponent },
   { path: 'passwdchange', component: PasswdchangeComponent },
+  { path: 'cookies-policy', component: CookiesPolicyComponent },
+  { path: 'disclaimer', component: DisclaimerComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'return-and-refund-policy', component: ReturnAndRefundPolicyComponent },
+  { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: '**', component: HomeComponent },
 ];
 
