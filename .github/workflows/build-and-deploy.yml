@@ -29,17 +29,22 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
+  
       - name: Install dependencies
         run: npm install
-
-      - name: Build Angular app (Production)
-        if: github.ref == 'refs/heads/main'
-        run: ng build --configuration=production
-
+  
+      - name: Verify Node and NPM versions
+        run: |
+          node -v
+          npm -v
+      - name: Verify Angular CLI Version
+        run: ./node_modules/.bin/ng --version
+      - name: Debug node_modules/.bin
+        run: ls -al ./node_modules/.bin
+  
       - name: Build Angular app (Development)
         if: github.ref != 'refs/heads/main'
-        run: ng build --configuration=development
+        run: ./node_modules/.bin/ng build --configuration=development
 
       - name: Set deploy dir
         run: |
