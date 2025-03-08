@@ -20,15 +20,17 @@ export type Instruction = {
   link?: string | null,
   premium?: boolean,
   finished?: boolean,
-  date: Date,
+  date: string,
   userId: string,
   shortcutsCz?: string | null;
   shortcutsEn?: string | null;
   steps: Step[],
+  username: string,
+  userLink: string,
 }
 
 export type Step = {
-  id: string,
+  id: number,
   titleCz: string,
   titleEn: string,
   descriptionCz: string[],
