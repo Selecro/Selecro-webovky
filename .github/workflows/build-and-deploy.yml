@@ -6,39 +6,46 @@ on:
       - dev
       - main
   workflow_dispatch:
-  
+
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: "Checking out code"
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install Node.js and Angular CLI
-        run: |
-          sudo apt update
-          sudo apt install -y nodejs npm
-          sudo npm install -g @angular/cli
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      - name: Build
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app (Production)
         if: github.ref == 'refs/heads/main'
-        run: |
-          npm i
-          ng build --configuration=production
+        run: ng build --configuration=production
 
-      - name: Build
+      - name: Build Angular app (Development)
         if: github.ref != 'refs/heads/main'
-        run: |
-          npm i
-          ng build --configuration=development
+        run: ng build --configuration=development
 
       - name: Set deploy dir
         run: |
           echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www' || './develop/www' }}" >> $GITHUB_ENV
 
-      - name: Upload via FTP
+      - name: Deploy via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
@@ -49,6 +56,4 @@ jobs:
           delete: "true"
 
       - name: Clean up
-        run: |
-          rm -r ./dist
-          
+        run: rm -rf ./dist
