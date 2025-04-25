@@ -1,0 +1,73 @@
+name: Deploy Vue to FTP server
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_dir: ${{ steps.set_deploy_dir.outputs.DEPLOY_DIR }}
+      build_output_dir: ${{ steps.build_dev_app.outputs.build_output_dir || steps.build_prod_app.outputs.build_output_dir }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vue app (Development)
+        if: github.ref != 'refs/heads/main'
+        id: build_dev_app
+        run: |
+          npm run build:dev
+          echo "build_output_dir=./dist" >> $GITHUB_OUTPUT
+
+      - name: Build Vue app (Production)
+        if: github.ref == 'refs/heads/main'
+        id: build_prod_app
+        run: |
+          npm run build
+          echo "build_output_dir=./dist" >> $GITHUB_OUTPUT
+
+      - name: Set deploy dir
+        id: set_deploy_dir
+        run: |
+          echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www' || './develop/www' }}" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.CD_FTP_SERVER }}
+          user: ${{ secrets.CD_FTP_USERNAME }}
+          password: ${{ secrets.CD_FTP_PASSWORD }}
+          local_dir: ${{ needs.build.outputs.build_output_dir }}
+          remote_dir: ${{ needs.build.outputs.deploy_dir }}
+          delete: "true"
+
+      - name: Clean up
+        run: rm -rf ./dist
