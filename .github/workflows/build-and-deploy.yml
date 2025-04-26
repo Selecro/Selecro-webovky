@@ -59,13 +59,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Debug - List files before FTP
+        run: ls -al
+
       - name: Deploy via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
-          local_dir: ${{ needs.build.outputs.build_output_dir }}
+          local_dir: /github/workspace/${{ needs.build.outputs.build_output_dir }}
           remote_dir: ${{ needs.build.outputs.deploy_dir }}
           delete: "true"
 
