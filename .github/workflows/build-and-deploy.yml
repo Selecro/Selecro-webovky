@@ -71,16 +71,13 @@ jobs:
           name: dist-output
           path: ./
 
-      - name: Debug - List files after download
-        run: ls -al
-
       - name: Deploy via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
-          local_dir: ./dist-output/dist  # Keep this for now
+          local_dir: ./dist-output
           remote_dir: ${{ needs.build.outputs.deploy_dir }}
           delete: "true"
 
