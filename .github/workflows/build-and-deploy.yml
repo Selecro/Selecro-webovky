@@ -69,17 +69,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-output
-          path: ./
+          path: ./dist-output
 
       - name: Deploy via FTP
-        uses: airvzxf/ftp-deployment-action@latest
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
-          user: ${{ secrets.CD_FTP_USERNAME }}
+          username: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
-          local_dir: /github/workspace/dist-output
-          remote_dir: ${{ needs.build.outputs.deploy_dir }}
-          delete: "true"
+          local-dir: ./dist-output
+          remote-dir: ${{ needs.build.outputs.deploy_dir }}
+          delete: true
 
       - name: Clean up
         run: rm -rf ./dist-output
