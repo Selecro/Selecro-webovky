@@ -77,7 +77,7 @@ jobs:
           server: ${{ secrets.CD_FTP_SERVER }}
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
-          local_dir: ./dist-output
+          local_dir: dist-output
           remote_dir: ${{ needs.build.outputs.deploy_dir }}
           delete: "true"
 
