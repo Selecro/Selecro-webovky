@@ -55,19 +55,30 @@ jobs:
         run: |
           echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www' || './develop/www' }}" >> $GITHUB_OUTPUT
 
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-output
+          path: ./dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-output
+          path: dist-output  # Download directly into a folder named 'dist-output'
+
       - name: Deploy via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
-          local_dir: ${{ needs.build.outputs.build_output_dir }}
+          local_dir: dist-output
           remote_dir: ${{ needs.build.outputs.deploy_dir }}
           delete: "true"
 
       - name: Clean up
-        run: rm -rf ./dist
+        run: rm -rf dist-output
