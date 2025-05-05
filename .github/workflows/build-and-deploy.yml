@@ -9,6 +9,9 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     outputs:
       deploy_dir: ${{ steps.set_deploy_dir.outputs.DEPLOY_DIR }}
@@ -61,6 +64,9 @@ jobs:
           name: dist-output
           path: ./dist
   deploy:
+    permissions:
+      contents: read
+      pull-requests: write
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -71,7 +77,7 @@ jobs:
           path: dist-output  # Download directly into a folder named 'dist-output'
 
       - name: Deploy via FTP
-        uses: airvzxf/ftp-deployment-action@latest
+        uses: airvzxf/ftp-deployment-action@5483542d9d0055601ff0bf09c1e552f3a95c9ff8
         with:
           server: ${{ secrets.CD_FTP_SERVER }}
           user: ${{ secrets.CD_FTP_USERNAME }}
