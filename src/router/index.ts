@@ -4,6 +4,7 @@ import ToolPage from '@/pages/ToolPage.vue'
 import DictionaryPage from '@/pages/DictionaryPage.vue'
 import EducationPage from '@/pages/EducationPage.vue'
 import HomePage from '@/pages/HomePage.vue'
+import EshopPage from '@/pages/EshopPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,8 +14,7 @@ const router = createRouter({
     { path: '/dictionary', name: 'dictionary', component: DictionaryPage, },
     { path: '/education', name: 'education', component: EducationPage, },
     { path: '/manual', name: 'manual', component: ManualPage, },
-
-
+    { path: '/eshop', name: 'eshop', component: EshopPage, },
   ],
 })
 

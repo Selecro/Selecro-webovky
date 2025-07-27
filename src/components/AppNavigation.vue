@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import ColorThemeSwitch from '@/components/ColorThemeSwitch.vue'
 
 </script>
 
@@ -12,6 +13,7 @@ import { RouterLink } from 'vue-router'
       <div>
         <span class="material-icons">search</span>
         <span><h2>CZ</h2></span>
+        <span><ColorThemeSwitch></ColorThemeSwitch></span>
 
 
         <span class="material-icons">shopping_cart</span>
@@ -19,11 +21,11 @@ import { RouterLink } from 'vue-router'
       </div>
     </div>
     <nav>
-      <RouterLink to="/"><span class="material-icons">info</span>Selecro</RouterLink>
-      <RouterLink to="/tool"><span class="material-icons">style</span>Pomůcky</RouterLink>
-      <RouterLink to="/dictionary"><span class="material-icons">book</span>Slovník</RouterLink>
-      <RouterLink to="/education"><span class="material-icons">school</span>Výuka</RouterLink>
-      <RouterLink to="/manual"><span class="material-icons">view_in_ar</span>Návody</RouterLink>
+      <RouterLink to="/" class="icon-link"><span class="material-icons">info</span>Selecro</RouterLink>
+      <RouterLink to="/dictionary" class="icon-link"><span class="material-icons">book</span>Slovník</RouterLink>
+      <RouterLink to="/education" class="icon-link"><span class="material-icons">school</span>Výuka</RouterLink>
+      <RouterLink to="/manual" class="icon-link"><span class="material-icons">view_in_ar</span>Návody</RouterLink>
+      <RouterLink to="/eshop" class="icon-link"><span class="material-icons">shopping_bag</span>Obchod</RouterLink>
     </nav>
   </header>
   <RouterView />
@@ -31,11 +33,9 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 header {
-  background-color: #86D1EA;
+  background-color: var(--primary-color);
   color-text: black;
-
-/*  padding: 1rem 2rem;
-  */position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -49,13 +49,13 @@ header div {
 header div :last-child {
   margin-left: auto;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
-
 }
 
 a {
@@ -72,8 +72,14 @@ a {
 }
 
 a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary-hover-color);
   border-radius: 5px;
 
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 </style>
