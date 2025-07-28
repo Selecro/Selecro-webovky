@@ -18,33 +18,36 @@
 </script>
 
 <template>
-  <div style="top: 0">
-  <label class="theme-switch">
-    <input type="checkbox" :checked="isDark" @change="toggleTheme" />
-    <span class="slider">
-      <!-- Ikona cílového režimu (v pozadí) -->
-      <span class="second-mode material-icons left">
-        light_mode
-      </span>
-      <span class="second-mode material-icons right">
-        dark_mode
-      </span>
+  <div class="mt-10">
+    <label class="theme-switch">
+      <input type="checkbox" :checked="isDark" @change="toggleTheme" />
+      <span class="slider">
+        <!-- Ikona cílového režimu (v pozadí) -->
+        <span class="second-mode material-icons left">
+          light_mode
+        </span>
+        <span class="second-mode material-icons right">
+          dark_mode
+        </span>
 
-      <!-- Posuvné tlačítko s aktivní ikonou -->
-      <span class="icon material-icons">
-        {{ isDark ? 'dark_mode' : 'light_mode' }}
+        <!-- Posuvné tlačítko s aktivní ikonou -->
+        <span class="icon material-icons">
+          {{ isDark ? 'dark_mode' : 'light_mode' }}
+        </span>
       </span>
-    </span>
-  </label>
+    </label>
   </div>
 </template>
 
 <style scoped>
+div {
+  margin-top: -45px;
+}
+
 .theme-switch {
   display: inline-block;
   width: 60px;
   height: 35px;
-  top: 0;
 }
 
 .theme-switch input {
@@ -104,5 +107,4 @@ input:checked + .slider .icon {
 .second-mode.right {
   right: 5px;
 }
-
 </style>
