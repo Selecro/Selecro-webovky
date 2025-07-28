@@ -7,17 +7,16 @@ import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import router from './router'
 
-import cs from './locales/cs'
-import en from './locales/en'
+import cs from './locales/cs.ts'
+import en from './locales/en.ts'
 
-// Typová anotace pro zprávy (není povinná, ale doporučená)
 const messages = {
   cs,
   en,
 }
 
 const i18n = createI18n({
-  legacy: false, // důležité pro Composition API (setup)
+  legacy: false, // musi zustat kvuli ts
   locale: 'cs',
   fallbackLocale: 'en',
   messages,

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import ColorThemeSwitcher from '@/components/ColorThemeSwitcher.vue'
 import AppHeader from '@/components/AppHeader.vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 </script>
 
 <template>
@@ -10,10 +11,10 @@ import AppHeader from '@/components/AppHeader.vue'
     <AppHeader></AppHeader>
     <nav>
       <RouterLink to="/" class="icon-link"><span class="material-icons">home</span>Selecro</RouterLink>
-      <RouterLink to="/dictionary" class="icon-link"><span class="material-icons">book</span>{{ $t('message.dictionaryTitle') }}</RouterLink>
-      <RouterLink to="/education" class="icon-link"><span class="material-icons">school</span>{{ $t('message.educationTitle') }}</RouterLink>
-      <RouterLink to="/manuals" class="icon-link"><span class="material-icons">view_in_ar</span>{{ $t('message.manualTitle') }}</RouterLink>
-      <RouterLink to="/eshop" class="icon-link"><span class="material-icons">shopping_bag</span>{{ $t('message.shopTitle') }}</RouterLink>
+      <RouterLink to="/dictionary" class="icon-link"><span class="material-icons">book</span>{{ t('message.dictionaryTitle') }}</RouterLink>
+      <RouterLink to="/education" class="icon-link"><span class="material-icons">school</span>{{ t('message.educationTitle') }}</RouterLink>
+      <RouterLink to="/manuals" class="icon-link"><span class="material-icons">view_in_ar</span>{{ t('message.manualTitle') }}</RouterLink>
+      <RouterLink to="/eshop" class="icon-link"><span class="material-icons">shopping_bag</span>{{ t('message.shopTitle') }}</RouterLink>
     </nav>
   </header>
   <RouterView />

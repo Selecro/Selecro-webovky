@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 
@@ -25,6 +25,7 @@ select {
   box-shadow: none;
   text-align: center;
   background: none;
+  font-family: var(--font-heading);
   font-size: 1.5em;
   border: none;
   padding: 2px;
@@ -34,4 +35,7 @@ select {
   -moz-appearance: none;    /* Firefox */
 }
 
+option {
+  color: var(--color-light-mode-text);
+}
 </style>
