@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const { locale } = useI18n()
 const currentLanguage = ref(locale.value)
 
 const changeLanguage = () => {
   locale.value = currentLanguage.value
+  localStorage.setItem('language', currentLanguage.value)
 }
+
+onMounted(() => {
+  const savedLanguage = localStorage.getItem('language')
+  if (savedLanguage) {
+    currentLanguage.value = savedLanguage
+    locale.value = savedLanguage
+  }
+})
 </script>
 
 <template>
