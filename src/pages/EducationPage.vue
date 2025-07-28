@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>Výuka</h1>
+  <h1>{{ $t('message.educationTitle') }}</h1>
 </template>
 
 <style scoped>

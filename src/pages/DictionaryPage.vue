@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <h1>Slovník</h1>
+    <h1>{{ $t('message.dictionaryTitle') }}</h1>
 
 
 </template>

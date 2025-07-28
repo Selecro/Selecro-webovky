@@ -15,7 +15,7 @@ const router = createRouter({
     { path: '/tool', name: 'tool', component: ToolPage, },
     { path: '/dictionary', name: 'dictionary', component: DictionaryPage, },
     { path: '/education', name: 'education', component: EducationPage, },
-    { path: '/manual', name: 'manual', component: ManualPage, },
+    { path: '/manuals', name: 'manuals', component: ManualPage, },
     { path: '/eshop', name: 'eshop', component: EshopPage, },
     { path: '/card', name: 'card', component: CardPage, },
     { path: '/profile', name: 'profile', component: ProfilePage, },

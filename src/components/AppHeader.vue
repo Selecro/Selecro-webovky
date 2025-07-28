@@ -1,7 +1,8 @@
 <script setup lang="ts">
 
 import { RouterLink } from 'vue-router'
-import ColorThemeSwitch from '@/components/ColorThemeSwitch.vue'
+import ColorThemeSwitcher from '@/components/ColorThemeSwitcher.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 </script>
 
 <template>
@@ -15,12 +16,14 @@ import ColorThemeSwitch from '@/components/ColorThemeSwitch.vue'
 
     <div>
       <span class="material-icons">search</span>
-      <span><h2>CZ</h2></span>
-      <ColorThemeSwitch></ColorThemeSwitch>
+      <LanguageSwitcher/>
+      <ColorThemeSwitcher></ColorThemeSwitcher>
+
       <RouterLink to="/card">
         <span class="material-icons">shopping_cart</span>
       </RouterLink>
-      <RouterLink to="profile">
+
+      <RouterLink to="/profile">
         <span class="material-icons">account_circle</span>
       </RouterLink>
     </div>

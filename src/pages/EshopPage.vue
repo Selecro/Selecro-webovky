@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>Obchod</h1>
+  <h1>{{ $t('message.shopTitle') }}</h1>
 </template>
 
 <style scoped>

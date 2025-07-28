@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>Návody</h1>
+  <h1>{{ $t('message.manualTitle') }}</h1>
 </template>
 
 <style scoped>
