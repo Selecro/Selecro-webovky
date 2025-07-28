@@ -7,6 +7,7 @@ const messages = {
     manualTitle: "Návody",
     cardTitle: "Košík",
     profileTitle: "Profil",
+    searchText: "Vyhledávání...",
     language: "Jazyk"
   }
 };

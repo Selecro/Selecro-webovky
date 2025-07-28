@@ -7,6 +7,7 @@ const messages = {
     manualTitle: "Manuals",
     cardTitle: "Card",
     profileTitle: "Profile",
+    searchText: "Search...",
     language: "Language"
   }
 };

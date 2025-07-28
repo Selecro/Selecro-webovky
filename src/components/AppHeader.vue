@@ -3,6 +3,7 @@
 import { RouterLink } from 'vue-router'
 import ColorThemeSwitcher from '@/components/ColorThemeSwitcher.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import SearchBar from '@/components/SearchBar.vue'
 </script>
 
 <template>
@@ -15,17 +16,11 @@ import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
     </div>
 
     <div>
-      <span class="material-icons">search</span>
+      <SearchBar/>
       <LanguageSwitcher/>
-      <ColorThemeSwitcher></ColorThemeSwitcher>
-
-      <RouterLink to="/card">
-        <span class="material-icons">shopping_cart</span>
-      </RouterLink>
-
-      <RouterLink to="/profile">
-        <span class="material-icons">account_circle</span>
-      </RouterLink>
+      <ColorThemeSwitcher/>
+      <RouterLink to="/card"> <span class="material-icons">shopping_cart</span> </RouterLink>
+      <RouterLink to="/profile"> <span class="material-icons">account_circle</span> </RouterLink>
     </div>
   </div>
 </template>
