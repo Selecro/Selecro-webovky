@@ -18,6 +18,7 @@
 </script>
 
 <template>
+  <div style="top: 0">
   <label class="theme-switch">
     <input type="checkbox" :checked="isDark" @change="toggleTheme" />
     <span class="slider">
@@ -35,6 +36,7 @@
       </span>
     </span>
   </label>
+  </div>
 </template>
 
 <style scoped>
@@ -42,6 +44,7 @@
   display: inline-block;
   width: 60px;
   height: 35px;
+  top: 0;
 }
 
 .theme-switch input {
@@ -81,7 +84,7 @@
 }
 
 input:checked + .slider .icon {
-  transform: translateX(27px);
+  transform: translateX(26px);
 }
 
 .second-mode {

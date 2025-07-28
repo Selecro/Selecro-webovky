@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AppNavigation from '@/components/AppNavigation.vue'
+import AppNavigationHeader from '@/components/AppNavigationHeader.vue'
 </script>
 
 <template>
-  <AppNavigation />
+  <AppNavigationHeader />
 
 </template>
 

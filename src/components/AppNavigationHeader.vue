@@ -1,27 +1,15 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import ColorThemeSwitch from '@/components/ColorThemeSwitch.vue'
+import AppHeader from '@/components/AppHeader.vue'
 
 </script>
 
 <template>
   <header>
-    <div>
-      <div>
-        <h1>Selecro</h1>
-      </div>
-      <div>
-        <span class="material-icons">search</span>
-        <span><h2>CZ</h2></span>
-        <span><ColorThemeSwitch></ColorThemeSwitch></span>
-
-
-        <span class="material-icons">shopping_cart</span>
-        <span class="material-icons">account_circle</span>
-      </div>
-    </div>
+    <AppHeader></AppHeader>
     <nav>
-      <RouterLink to="/" class="icon-link"><span class="material-icons">info</span>Selecro</RouterLink>
+      <RouterLink to="/" class="icon-link"><span class="material-icons">home</span>Selecro</RouterLink>
       <RouterLink to="/dictionary" class="icon-link"><span class="material-icons">book</span>Slovník</RouterLink>
       <RouterLink to="/education" class="icon-link"><span class="material-icons">school</span>Výuka</RouterLink>
       <RouterLink to="/manual" class="icon-link"><span class="material-icons">view_in_ar</span>Návody</RouterLink>
@@ -34,16 +22,19 @@ import ColorThemeSwitch from '@/components/ColorThemeSwitch.vue'
 <style scoped>
 header {
   background-color: var(--primary-color);
-  color-text: black;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  padding: 12px;
+  padding-bottom: 0;
 }
 
 header div {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header div :last-child {
@@ -59,7 +50,7 @@ nav {
 }
 
 a {
-  color: white;
+  color: var(--color-text);
   text-decoration: none;
   text-align: center;
   font-weight: bold;
@@ -68,13 +59,11 @@ a {
   padding: 1rem 2rem;
   justify-content: center;
   align-items: center;
-
 }
 
 a:hover {
   background: var(--primary-hover-color);
   border-radius: 5px;
-
 }
 
 .icon-link {
