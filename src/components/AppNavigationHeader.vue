@@ -17,7 +17,6 @@ const { t } = useI18n()
       <RouterLink to="/eshop" class="icon-link"><span class="material-icons">shopping_bag</span>{{ t('message.shopTitle') }}</RouterLink>
     </nav>
   </header>
-  <RouterView />
 </template>
 
 <style scoped>
