@@ -27,7 +27,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 12px;
+  padding: 1.25em;
   padding-bottom: 0;
 }
 
@@ -64,11 +64,5 @@ a {
 a:hover {
   background: var(--primary-hover-color);
   border-radius: 5px;
-}
-
-.icon-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
 }
 </style>

@@ -8,7 +8,8 @@ const messages = {
     cardTitle: "Card",
     profileTitle: "Profile",
     searchText: "Search...",
-    language: "Language"
+    language: "Language",
+    slogan: "Everyone can create!",
   }
 };
 

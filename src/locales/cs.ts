@@ -8,7 +8,8 @@ const messages = {
     cardTitle: "Košík",
     profileTitle: "Profil",
     searchText: "Vyhledávání...",
-    language: "Jazyk"
+    language: "Jazyk",
+    slogan: "Tvořit může každý!"
   }
 };
 
