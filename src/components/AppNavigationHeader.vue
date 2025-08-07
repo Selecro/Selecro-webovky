@@ -50,6 +50,9 @@ nav {
 }
 
 a {
+  position: relative;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   color: var(--color-text);
   text-decoration: none;
   text-align: center;
@@ -61,8 +64,17 @@ a {
   align-items: center;
 }
 
+a:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background-color: var(--color-text);
+}
+
 a:hover {
   background: var(--primary-hover-color);
-  border-radius: 5px;
 }
 </style>
