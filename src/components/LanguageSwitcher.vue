@@ -6,6 +6,7 @@ const { locale } = useI18n()
 const currentLanguage = ref(locale.value)
 
 const changeLanguage = () => {
+  currentLanguage.value = currentLanguage.value === 'cs' ? 'en' : 'cs'
   locale.value = currentLanguage.value
   localStorage.setItem('language', currentLanguage.value)
 }
@@ -20,31 +21,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <select v-model="currentLanguage" @change="changeLanguage">
-      <option value="cs">CZ</option>
-      <option value="en">EN</option>
-    </select>
-  </div>
+  <v-button @click="changeLanguage">
+    {{ currentLanguage.toUpperCase() }}
+  </v-button>
 </template>
 
 <style scoped>
-select {
-  outline: none;
-  box-shadow: none;
-  text-align: center;
+v-button {
   background: none;
+  border: none;
   font-family: var(--font-heading);
   font-size: 1.5em;
-  border: none;
-  padding: 2px;
   color: var(--color-text);
-  appearance: none;        /* moderní prohlížeče */
-  -webkit-appearance: none; /* Safari/Chrome */
-  -moz-appearance: none;    /* Firefox */
-}
-
-option {
-  color: var(--color-light-mode-text);
+  cursor: pointer;
+  padding: 2px;
+  outline: none;
 }
 </style>

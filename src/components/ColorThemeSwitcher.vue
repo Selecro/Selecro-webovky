@@ -18,11 +18,10 @@
 </script>
 
 <template>
-  <div class="mt-10">
+  <div>
     <label class="theme-switch">
       <input type="checkbox" :checked="isDark" @change="toggleTheme" />
       <span class="slider">
-        <!-- Ikona cílového režimu (v pozadí) -->
         <span class="second-mode material-icons left">
           light_mode
         </span>
@@ -30,7 +29,6 @@
           dark_mode
         </span>
 
-        <!-- Posuvné tlačítko s aktivní ikonou -->
         <span class="icon material-icons">
           {{ isDark ? 'dark_mode' : 'light_mode' }}
         </span>
@@ -41,7 +39,7 @@
 
 <style scoped>
 div {
-  margin-top: -45px;
+  margin-top: -49px;
 }
 
 .theme-switch {
@@ -69,8 +67,8 @@ div {
 
 .icon {
   position: absolute;
-  top: 0.3px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height: 99%;
   width: 54%;
   border-radius: 60%;

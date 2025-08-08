@@ -53,4 +53,8 @@ v-footer {
   width: 60%;
   text-align: center;
 }
+
+a:hover {
+  background: none !important;
+}
 </style>

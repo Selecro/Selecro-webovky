@@ -7,30 +7,41 @@ import SearchBar from '@/components/SearchBar.vue'
 </script>
 
 <template>
-  <div>
-    <div>
+  <div class="header-container">
+    <div class="left-part">
       <RouterLink to="/" class="home-router">
         <img src="/public/logo-without-bg.png" alt="Logo" class="logo-in-header" />
         <h1>Selecro</h1>
       </RouterLink>
     </div>
 
-    <div>
+    <div class="right-part">
       <SearchBar/>
       <LanguageSwitcher/>
       <ColorThemeSwitcher/>
-      <RouterLink to="/card"> <span class="material-icons">shopping_cart</span> </RouterLink>
-      <RouterLink to="/profile"> <span class="material-icons">account_circle</span> </RouterLink>
+      <RouterLink to="/card"><span class="mt-3 material-icons ">shopping_cart</span></RouterLink>
+      <RouterLink to="/profile"><span class="material-icons">account_circle</span></RouterLink>
     </div>
   </div>
 </template>
 
 <style scoped>
-div {
+.header-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5em;
+}
+
+.left-part,
+.right-part {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.right-part .material-icons {
+  margin-top: 5px;
 }
 
 .logo-in-header {
@@ -41,7 +52,6 @@ div {
 
 .home-router {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.5em;
   color: var(--color-text);
