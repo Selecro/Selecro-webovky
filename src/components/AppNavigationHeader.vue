@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
+
+import { RouterLink } from 'vue-router'
+import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -10,11 +12,11 @@ const { t } = useI18n()
   <header>
     <AppHeader></AppHeader>
     <nav>
-      <RouterLink to="/" class="icon-link"><span class="material-icons">home</span>Selecro</RouterLink>
-      <RouterLink to="/dictionary" class="icon-link"><span class="material-icons">book</span>{{ t('message.dictionaryTitle') }}</RouterLink>
-      <RouterLink to="/education" class="icon-link"><span class="material-icons">school</span>{{ t('message.educationTitle') }}</RouterLink>
-      <RouterLink to="/manuals" class="icon-link"><span class="material-icons">view_in_ar</span>{{ t('message.manualTitle') }}</RouterLink>
-      <RouterLink to="/eshop" class="icon-link"><span class="material-icons">shopping_bag</span>{{ t('message.shopTitle') }}</RouterLink>
+      <RouterLink to="/" class="icon-link"><Icon icon="ic:outline-home" class="icon-in-navigation"/>Selecro</RouterLink>
+      <RouterLink to="/dictionary" class="icon-link"><Icon icon="ic:outline-book" class="icon-in-navigation"/>{{ t('message.dictionaryTitle') }}</RouterLink>
+      <RouterLink to="/education" class="icon-link"><Icon icon="ic:outline-school" class="icon-in-navigation"/>{{ t('message.educationTitle') }}</RouterLink>
+      <RouterLink to="/manuals" class="icon-link"><Icon icon="ic:outline-view-in-ar" class="icon-in-navigation"/>{{ t('message.manualTitle') }}</RouterLink>
+      <RouterLink to="/eshop" class="icon-link"><Icon icon="ic:outline-shopping-bag" class="icon-in-navigation"/>{{ t('message.shopTitle') }}</RouterLink>
     </nav>
   </header>
 </template>
@@ -77,4 +79,18 @@ a:not(:first-child)::before {
 a:hover {
   background: var(--primary-hover-color);
 }
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem; /* kontroluje výšku textu i ikon */
+}
+
+.icon-link .icon-in-navigation {
+  width: 2em;
+  height: 2em;
+  flex-shrink: 0;
+}
+
 </style>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Icon } from '@iconify/vue'
 
 const { t } = useI18n()
 const showSearch = ref(false)
@@ -12,7 +13,9 @@ function openSearchBar() {
 
 <template>
   <div class="search-container">
-    <button class="material-icons" @click="openSearchBar">search</button>
+    <button @click="openSearchBar">
+      <Icon icon="ic:outline-search" width="32" />
+    </button>
 
     <transition name="slide-fade">
       <div v-if="showSearch" class="search-panel">
@@ -26,9 +29,10 @@ function openSearchBar() {
 button {
   background: none;
   border: none;
-  font-size: 26px;
   cursor: pointer;
   color: var(--color-text);
+  padding-top: 8px;
+  padding-right: -5px;
 }
 
 input {

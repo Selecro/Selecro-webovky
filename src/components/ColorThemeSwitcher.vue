@@ -69,7 +69,7 @@ div {
   position: absolute;
   top: 0;
   left: 0;
-  height: 99%;
+  height: 100%;
   width: 54%;
   border-radius: 60%;
   background-color: var(--color-switch-light);

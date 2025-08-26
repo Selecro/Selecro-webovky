@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { Icon } from '@iconify/vue'
 import { RouterLink } from 'vue-router'
 import ColorThemeSwitcher from '@/components/ColorThemeSwitcher.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
@@ -19,8 +19,10 @@ import SearchBar from '@/components/SearchBar.vue'
       <SearchBar/>
       <LanguageSwitcher/>
       <ColorThemeSwitcher/>
-      <RouterLink to="/card"><span class="mt-3 material-icons ">shopping_cart</span></RouterLink>
-      <RouterLink to="/profile"><span class="material-icons">account_circle</span></RouterLink>
+      <div class="right-part-icon">
+        <RouterLink to="/card"><Icon icon="ic:outline-shopping-cart" width="32"/></RouterLink>
+        <RouterLink to="/profile"><Icon icon="ic:outline-account-circle" height="32"/></RouterLink>
+      </div>
     </div>
   </div>
 </template>
@@ -40,8 +42,8 @@ import SearchBar from '@/components/SearchBar.vue'
   gap: 0.5em;
 }
 
-.right-part .material-icons {
-  margin-top: 5px;
+.right-part-icon {
+  padding-top: 8px;
 }
 
 .logo-in-header {
