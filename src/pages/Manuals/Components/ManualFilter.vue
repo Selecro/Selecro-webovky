@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>Výuka</h1>
+
 </template>
 
 <style scoped>
