@@ -9,7 +9,11 @@ const messages = {
     profileTitle: "Profil",
     searchText: "Vyhledávání...",
     language: "Jazyk",
-    slogan: "Tvořit může každý!"
+    slogan: "Tvořit může každý!",
+
+    // Homepage
+    welcomeTitle: "Vítejte na stránce Selecro",
+    welcomeText: "Zaměřujeme se na učení háčkování a návratu mladých k ručním pracem.",
   }
 };
 
