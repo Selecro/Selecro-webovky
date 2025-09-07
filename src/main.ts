@@ -2,7 +2,6 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
-import type { Plugin } from 'vue'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -59,5 +58,6 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(i18n)
+// @ts-ignore
 app.use(vuetify)
 app.mount('#app')

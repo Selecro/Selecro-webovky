@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
+
 const reports = [
   {
     title: 'Narozeniny',
@@ -15,19 +17,19 @@ const reports = [
   {
     title: 'Nový příspěvek',
     icon: 'mdi-cog-outline',
-    category: 'System',
+    category: 'Personal',
     description: 'Je možné změnit barvu na červenou.',
   },
   {
     title: 'Selecro slevy',
     icon: 'mdi-bell-outline',
-    category: 'System',
+    category: 'Selecro',
     description: 'Je možné změnit barvu na červenou.',
   },
   {
     title: '1 rok s námi',
     icon: 'mdi-email-outline',
-    category: 'System',
+    category: 'Selecro',
     description: 'Je možné změnit barvu na červenou.',
   },
   {
@@ -69,7 +71,7 @@ const reports = [
   {
     title: 'Alert Report',
     icon: 'mdi-bell-outline',
-    category: 'System',
+    category: 'Personal',
     description: 'Je možné změnit barvu na červenou.',
   },
 ]
@@ -89,7 +91,16 @@ const reports = [
             color="var(--primary-color)"
           >
             <div class="scroll">
-              <v-list-item v-for="(r, i) in reports" :key="i" :prepend-icon="r.icon">
+              <v-list-item
+                v-for="(r, i) in reports"
+                :key="i">
+                <template #prepend>
+                  <img v-if="r.category === 'Selecro'" src="/public/logo-without-bg.png" class="icon-on-the-card"/>
+
+                  <Icon v-else-if="r.category === 'System'" icon="material-symbols:build-outline" class="icon-on-the-card"/>
+
+                  <Icon v-else icon="mdi:account-outline" class="icon-on-the-card"/>
+                </template>
                 <v-list-item-title>{{ r.title }}</v-list-item-title>
                 <v-list-item-subtitle>{{ r.description }}</v-list-item-subtitle>
               </v-list-item>
@@ -106,5 +117,11 @@ const reports = [
   overflow-y: auto;
   overflow-x: hidden;
   height: 300px;
+}
+
+.icon-on-the-card {
+  margin-right: 1em;
+  width: 2.5em;
+  height: 2.5em;
 }
 </style>

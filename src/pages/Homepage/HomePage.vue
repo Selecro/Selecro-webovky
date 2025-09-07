@@ -36,7 +36,6 @@ div {
   align-items: center;
   text-align: center;
   height: 70vh;
-  background-color: #FFB1C7;
 }
 
 .content-bar {
