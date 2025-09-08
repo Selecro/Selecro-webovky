@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
 import NewsBar from '@/pages/Homepage/Components/NewsBar.vue'
+import InstagramPost from '@/pages/Homepage/Components/InstagramPost.vue'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 </script>
@@ -16,7 +16,7 @@ const { t } = useI18n()
   </div>
   <div class="content-bar">
     <div>
-
+      <InstagramPost />
     </div>
     <div>
       <NewsBar></NewsBar>

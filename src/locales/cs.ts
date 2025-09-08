@@ -14,6 +14,8 @@ const messages = {
     // Homepage
     welcomeTitle: "Vítejte na stránce Selecro",
     welcomeText: "Zaměřujeme se na učení háčkování a návratu mladých k ručním pracem.",
+    igButton: "Zobrazit na Instagramu",
+    newTitle: "Novinky",
   }
 };
 

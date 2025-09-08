@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const reports = [
   {
     title: 'Narozeniny',
@@ -95,7 +97,7 @@ const reports = [
     <v-card
       color="var(--primary-color)"
       min-width="100%">
-      <v-card-title class="text-center">Novinky</v-card-title>
+      <v-card-title class="text-center">{{ t('message.newTitle') }}</v-card-title>
       <div class="scroll">
         <v-list
           density="compact"

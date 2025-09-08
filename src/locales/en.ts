@@ -14,6 +14,8 @@ const messages = {
     //Homepage
     welcomeTitle: "Welcome to the Selecro website",
     welcomeText: "We focus on teaching crochet and getting young people back into handicrafts.",
+    igButton: "View on Instagram",
+    newTitle: "News",
   }
 };
 
