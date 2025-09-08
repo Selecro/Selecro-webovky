@@ -7,109 +7,129 @@ const reports = [
     icon: 'mdi-email-outline',
     category: 'Selecro',
     description: 'Selecro slaví 5. narozeniny!',
+    date: "21.10.2024",
   },
   {
     title: 'Nový barevný režim',
     icon: 'mdi-account-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Nový příspěvek',
     icon: 'mdi-cog-outline',
     category: 'Personal',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Selecro slevy',
     icon: 'mdi-bell-outline',
     category: 'Selecro',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: '1 rok s námi',
     icon: 'mdi-email-outline',
     category: 'Selecro',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Nový návod',
     icon: 'mdi-account-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Dochází mi nápady',
     icon: 'mdi-cog-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Alert Report',
     icon: 'mdi-bell-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Email Report',
     icon: 'mdi-email-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'User Report',
     icon: 'mdi-account-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'System Report',
     icon: 'mdi-cog-outline',
     category: 'System',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
   {
     title: 'Alert Report',
     icon: 'mdi-bell-outline',
     category: 'Personal',
     description: 'Je možné změnit barvu na červenou.',
+    date: "21.10.2024",
   },
 ]
 </script>
 
 <template>
-  <v-app>
-    <v-main>
-      <v-container
-        min-width="500px">
-        <v-card
-          color="var(--primary-color)"
-          min-width="100%">
-          <v-card-title> Novinky </v-card-title>
-          <v-list
-            density="compact"
-            color="var(--primary-color)"
-          >
-            <div class="scroll">
-              <v-list-item
-                v-for="(r, i) in reports"
-                :key="i">
-                <template #prepend>
-                  <img v-if="r.category === 'Selecro'" src="/public/logo-without-bg.png" class="icon-on-the-card"/>
+  <v-container
+    min-width="500px">
+    <v-card
+      color="var(--primary-color)"
+      min-width="100%">
+      <v-card-title class="text-center">Novinky</v-card-title>
+      <div class="scroll">
+        <v-list
+          density="compact"
+          style="background-color: var(--primary-hover-color);"
+        >
+          <template
+             v-for="(r, i) in reports"
+             :key="i">
+          <v-list-item >
+            <template #prepend>
+              <img v-if="r.category === 'Selecro'" src="/public/logo-without-bg.png" class="icon-on-the-card"/>
 
-                  <Icon v-else-if="r.category === 'System'" icon="material-symbols:build-outline" class="icon-on-the-card"/>
+              <Icon v-else-if="r.category === 'System'" icon="material-symbols:build-outline" class="icon-on-the-card"/>
 
-                  <Icon v-else icon="mdi:account-outline" class="icon-on-the-card"/>
-                </template>
-                <v-list-item-title>{{ r.title }}</v-list-item-title>
-                <v-list-item-subtitle>{{ r.description }}</v-list-item-subtitle>
-              </v-list-item>
-            </div>
-          </v-list>
-        </v-card>
-      </v-container>
-    </v-main>
-  </v-app>
+              <Icon v-else icon="mdi:account-outline" class="icon-on-the-card"/>
+            </template>
+            <v-list-item-title>
+              <div class="item-title">
+                <div>
+                  {{ r.title }}
+                </div>
+                <div>
+                  {{ r.date }}
+                </div>
+              </div>
+            </v-list-item-title>
+            <v-list-item-subtitle>{{ r.description }}</v-list-item-subtitle>
+          </v-list-item>
+          <v-divider class="border-opacity-50"/>
+          </template>
+        </v-list>
+      </div>
+    </v-card>
+  </v-container>
 </template>
 
 <style scoped>
@@ -123,5 +143,15 @@ const reports = [
   margin-right: 1em;
   width: 2.5em;
   height: 2.5em;
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-title div:last-child {
+  font-size: small;
 }
 </style>

@@ -1,12 +1,12 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   /* paleta */
-  --primary-light-color: #86D1EA;
-  --primary-hover-light-color: #6AB5CD;
+  --primary-light-color: #6AB5CD;
+  --primary-hover-light-color: #86D1EA;
 
 
-  --primary-dark-color: #6AB5CD;
-  --primary-hover-dark-color: #86D1EA;
+  --primary-dark-color: #86D1EA;
+  --primary-hover-dark-color: #6AB5CD;
 
   --color-dark-mode-text: #ffffff;
   --color-light-mode-text: #181818;
