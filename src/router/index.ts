@@ -7,6 +7,7 @@ import HomePage from '@/pages/Homepage/HomePage.vue'
 import EshopPage from '@/pages/Eshop/EshopPage.vue'
 import CardPage from '@/pages/Card/CardPage.vue'
 import ProfilePage from '@/pages/Profile/ProfilePage.vue'
+import AboutPage from '@/pages/About/AboutPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,7 @@ const router = createRouter({
     { path: '/eshop', name: 'eshop', component: EshopPage, },
     { path: '/card', name: 'card', component: CardPage, },
     { path: '/profile', name: 'profile', component: ProfilePage, },
+    { path: '/about', name: 'about', component: AboutPage, },
     /*{ path: '/eshop', name: 'eshop', component: EshopPage, },
   */],
 })
