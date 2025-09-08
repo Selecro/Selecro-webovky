@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import NewsBar from '@/pages/Homepage/Components/NewsBar.vue'
-import InstagramPost from '@/pages/Homepage/Components/InstagramPost.vue'
-import { useI18n } from 'vue-i18n'
+import InstagramPost from "@/pages/Homepage/Components/InstagramPost.vue"
 
+import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 </script>
 
@@ -40,9 +40,12 @@ div {
 
 .content-bar {
   display: flex;
+  justify-content: center; /* vycentruje horizontálně */
+  align-items: center;     /* vycentruje vertikálně */
+  gap: 2rem;               /* mezera mezi komponentami */
 }
 
 .content-bar div {
-  width: 50%;
+  width: 100%; /* nebo úplně vyhodit width */
 }
 </style>

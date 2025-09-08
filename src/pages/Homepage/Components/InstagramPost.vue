@@ -1,5 +1,4 @@
-
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from "vue"
 import { useI18n } from 'vue-i18n'
 
@@ -33,40 +32,52 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="post" class="ig-post" >
-    <div>
-      <div class="header">
-        <img v-if="profilePic" :src="profilePic" class="profile-picture" />
-        <span class="font-semibold text-sm">@{{ username }}</span>
-      </div>
+  <div class="ig-wrapper">
+    <div v-if="post" class="ig-post" >
+      <div>
+        <div class="header">
+          <img v-if="profilePic" :src="profilePic" class="profile-picture" />
+          <span class="font-semibold text-sm">@{{ username }}</span>
+        </div>
 
-      <img :src="post.media_url" alt="IG post" class="ig-post-picture"/>
+        <img :src="post.media_url" alt="IG post" class="ig-post-picture"/>
 
-      <div class="p-3">
-        <p class="text-sm text-gray-800 line-clamp-3">
-          {{ post.caption }}
-        </p>
+        <div class="p-3">
+          <p class="text-sm text-gray-800 line-clamp-3">
+            {{ post.caption }}
+          </p>
+        </div>
       </div>
+        <v-btn
+          :href="post.permalink"
+          class="w-100 ig-button"
+          target="_blank"
+          rel="noopener"
+        >
+          <strong>{{ t('message.igButton')}}</strong>
+        </v-btn>
     </div>
-      <v-btn
-        :href="post.permalink"
-        class="w-100 ig-button"
-        target="_blank"
-        rel="noopener"
-      >
-        <strong>{{ t('message.igButton')}}</strong>
-      </v-btn>
-  </div>
-  <div v-else>
-    Příspěvěk není k dispozici
+    <div v-else>
+      Příspěvěk není k dispozici
+    </div>
   </div>
 </template>
 
 <style>
+.ig-wrapper {
+  display: flex;
+  justify-content: center; /* horizontálně na střed */
+  align-items: center;     /* vertikálně na střed (pokud dáš výšku) */
+  width: 100%;
+  min-height: 100%;        /* nebo třeba min-height: 70vh; */
+}
+
 .ig-post {
-  width: 500px;
+  width: 350px;
   height: auto;
   text-align: left;
+  justify-content: center;
+  align-content: center;
   border: 1px solid var(--color-text);
   border-radius: 8px;
 }

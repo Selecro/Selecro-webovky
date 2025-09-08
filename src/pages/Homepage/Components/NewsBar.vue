@@ -92,11 +92,10 @@ const reports = [
 </script>
 
 <template>
-  <v-container
-    min-width="500px">
+  <v-container class="news-container">
     <v-card
       color="var(--primary-color)"
-      min-width="100%">
+      max-width="80%">
       <v-card-title class="text-center">{{ t('message.newTitle') }}</v-card-title>
       <div class="scroll">
         <v-list
@@ -135,10 +134,15 @@ const reports = [
 </template>
 
 <style scoped>
+.news-container {
+  width: 100%;
+  height: 100%;
+}
+
 .scroll {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 300px;
+  height: 450px;
 }
 
 .icon-on-the-card {
