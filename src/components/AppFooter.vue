@@ -44,7 +44,7 @@ const { t } = useI18n()
       </a>
 
       <a href="">
-        <Icon icon="pajamas:documents" height="34" />
+        <Icon icon="icomoon-free:files-empty" height="34" />
       </a>
     </div>
   </v-footer>
