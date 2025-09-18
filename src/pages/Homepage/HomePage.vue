@@ -25,24 +25,21 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
-div {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
 .welcome-text {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 70vh;
+  height: 500px;
+  width: 100%;
+  background-color: #FFB1C7;
 }
 
 .content-bar {
   display: flex;
-  justify-content: center; /* vycentruje horizontálně */
-  align-items: center;     /* vycentruje vertikálně */
-  gap: 2rem;               /* mezera mezi komponentami */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .content-bar div {

@@ -24,7 +24,9 @@
 
 .content {
   flex: 1;
-  padding: 2rem 4rem;
+  padding-right: 6em;
+  padding-left: 6em;
+  padding-bottom: 2em;
 }
 
 .v-footer {
