@@ -12,13 +12,17 @@ const { t } = useI18n()
     <BasicBanner/>
   </div>
   <div class="content-bar">
-    <div>
-      <InstagramPost />
-    </div>
-    <div>
-      <NewsBar></NewsBar>
-    </div>
+    <v-row>
+      <v-col cols="8">
+        <NewsBar />
+      </v-col>
+
+      <v-col cols="4">
+        <InstagramPost />
+      </v-col>
+    </v-row>
   </div>
+
 </template>
 
 <style scoped>
@@ -26,7 +30,7 @@ const { t } = useI18n()
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  padding-top: 24px;
 }
 
 .content-bar div {

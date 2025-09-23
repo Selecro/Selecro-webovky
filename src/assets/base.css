@@ -92,9 +92,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: normal;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 .icon-link {
