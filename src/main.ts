@@ -10,6 +10,7 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 import App from './App.vue'
+import './assets/base.css'
 import router from './router'
 import cs from './locales/cs'
 import en from './locales/en'
@@ -51,7 +52,6 @@ const vuetify = createVuetify({
     aliases,
     sets: { mdi },
   },
-  // volitelně: theme: { defaultTheme: theme } -- pokud máš vlastní témata
 })
 
 const app = createApp(App)

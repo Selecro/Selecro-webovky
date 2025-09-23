@@ -103,3 +103,15 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5em;
 }
+
+.custom-btn {
+  background-color: #FFB1C7;
+  border-radius: 40px;
+  border: 1px solid #E494AC;
+  transition: none;
+}
+
+.custom-btn:hover {
+  background-color: #E494AC;
+  cursor: pointer;
+}
