@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const length = ref(3)
+const length = ref(5)
 const onboarding = ref(0)
 </script>
 

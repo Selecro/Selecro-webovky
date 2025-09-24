@@ -9,7 +9,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="d-flex align-center justify-center pt-6 pb-3">
+  <div class="d-flex align-center justify-center pb-3">
     <BasicBanner/>
   </div>
   <div class="content-bar pt-3 pb-3">
@@ -25,20 +25,26 @@ const { t } = useI18n()
   </div>
   <div class="pt-3 pb-3">
     <h1>Co u nás najdete?</h1>
-    <CrossCard
-      title="Nauč se háčkovat"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu"
-      image="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
-      side="right"
-      buttonAction="/education"
-    />
-    <CrossCard
-      title="Nauč se háčkovat"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu"
-      image="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
-      pictureSide="left"
-      buttonAction="/dictionary"
-    />
+    <div class="d-flex">
+      <CrossCard
+        title="Nauč se háčkovat"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu"
+        image="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
+        side="right"
+        buttonAction="/education"
+      />
+      <img src="/cross_left.svg" class="svg-road">
+    </div>
+    <div class="d-flex">
+      <img src="/cross_left.svg" class="svg-road" style="transform: scaleX(-1);">
+      <CrossCard
+        title="Nauč se háčkovat"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu"
+        image="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
+        pictureSide="left"
+        buttonAction="/dictionary"
+      />
+    </div>
   </div>
 
 </template>
@@ -55,4 +61,7 @@ const { t } = useI18n()
   width: 100%;
 }
 
+.svg-road {
+  color: var(--color-text);
+}
 </style>

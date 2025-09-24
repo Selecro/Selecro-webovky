@@ -24,9 +24,10 @@
 
 .content {
   flex: 1;
-  padding-right: 6em;
-  padding-left: 6em;
-  padding-bottom: 2em;
+  margin-right: 134px;
+  margin-left: 134px;
+  padding: 1em 2em;
+  background-color: white;
 }
 
 .v-footer {

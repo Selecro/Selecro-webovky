@@ -54,7 +54,7 @@ onMounted(async () => {
           class="w-full text-center block text-black"
           target="_blank"
           rel="noopener"
-          variant="plain"
+          variant="text"
         >
           <strong>{{ t('message.igButton')}}</strong>
         </v-btn>
