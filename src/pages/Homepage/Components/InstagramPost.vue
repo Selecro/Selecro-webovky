@@ -43,19 +43,22 @@ onMounted(async () => {
         <img :src="post.media_url" alt="IG post" class="ig-post-picture"/>
 
         <div class="p-3">
-          <p class="text-sm text-gray-800 line-clamp-3">
-            {{ post.caption }}
+          <p class="text-gray-800 line-clamp-3 truncate-3">
+            <h5>{{ post.caption }}</h5>
           </p>
         </div>
       </div>
+      <div class="d-flex align-center justify-center">
         <v-btn
           :href="post.permalink"
-          class="w-100 ig-button"
+          class="w-full text-center block text-black"
           target="_blank"
           rel="noopener"
+          variant="plain"
         >
           <strong>{{ t('message.igButton')}}</strong>
         </v-btn>
+      </div>
     </div>
     <div v-else>
       Příspěvěk není k dispozici
@@ -66,10 +69,10 @@ onMounted(async () => {
 <style>
 .ig-wrapper {
   display: flex;
-  justify-content: center; /* horizontálně na střed */
-  align-items: center;     /* vertikálně na střed (pokud dáš výšku) */
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 100%;        /* nebo třeba min-height: 70vh; */
+  min-height: 100%;
 }
 
 .ig-post {
@@ -78,8 +81,6 @@ onMounted(async () => {
   text-align: left;
   justify-content: center;
   align-content: center;
-  border: 1px solid var(--color-text);
-  border-radius: 8px;
 }
 
 .ig-post div:first-child {
@@ -103,16 +104,15 @@ onMounted(async () => {
   width: 100%;
 }
 
-.ig-button {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  background-color: var(--color-background);
-  color: var(--color-text);
-}
-
 a:hover {
   background-color: var(--primary-hover-color);
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

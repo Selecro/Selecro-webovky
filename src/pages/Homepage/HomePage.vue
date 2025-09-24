@@ -8,10 +8,10 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="d-flex align-center justify-center">
+  <div class="d-flex align-center justify-center pt-6 pb-3">
     <BasicBanner/>
   </div>
-  <div class="content-bar">
+  <div class="content-bar pt-3 pb-3">
     <v-row>
       <v-col cols="8">
         <NewsBar />
@@ -21,6 +21,9 @@ const { t } = useI18n()
         <InstagramPost />
       </v-col>
     </v-row>
+  </div>
+  <div class="pt-3 pb-3">
+
   </div>
 
 </template>
