@@ -1,15 +1,28 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   /* paleta */
-  --primary-light-color: #86D1EA;
-  --primary-hover-light-color: #6AB5CD;
-
-
-  --primary-dark-color: #6AB5CD;
-  --primary-hover-dark-color: #86D1EA;
 
   --color-dark-mode-text: #ffffff;
   --color-light-mode-text: #181818;
+
+  --background-light: #F9FDFF;
+  --background-dark: #F9FDFF;
+
+  --primary-div-light-color: #B3EBFF;
+  --primary-menu-light-color: #86D1EA;
+  --primary-hover-light-color: #6AB5CD;
+  --secondary-div-light-color: #FFD9E2;
+  --secondary-button-light-color: #FFB1C7;
+  --seconadary-hover-light-color: #E494AC;
+  --secondary-border-light-color: #E494AC;
+
+  --primary-div-dark-color: #B3EBFF;
+  --primary-menu-dark-color: #86D1EA;
+  --primary-hover-dark-color: #6AB5CD;
+  --secondary-div-dark-color: #FFD9E2;
+  --secondary-button-dark-color: #FFB1C7;
+  --seconadary-hover-dark-color: #E494AC;
+  --secondary-border-dark-color: #E494AC;
 
   /* default vue */
   --color-switch-backround: #BBBBBB;
@@ -42,8 +55,14 @@
 
 /* Light theme */
 :root {
-  --primary-color: var(--primary-light-color);
+  --primary-div-color: var(--primary-div-light-color);
+  --primary-menu-color: var(--primary-menu-light-color);
   --primary-hover-color: var(--primary-hover-light-color);
+
+  --secondary-div-color: var(--secondary-div-light-color);
+  --secondary-button-color: var(--secondary-button-light-color);
+  --secondary-hover-color: var(--seconadary-hover-light-color);
+  --secondary-border-color: var(--secondary-border-light-color);
 
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
@@ -56,7 +75,7 @@
 
 /* Dark theme */
 html[data-theme='dark'] {
-  --primary-color: var(--primary-dark-color);
+  --primary-div-color: var(--primary-div-dark-color);
   --primary-hover-color: var(--primary-hover-dark-color);
 
   --color-background: var(--vt-c-black);
