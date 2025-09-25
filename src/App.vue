@@ -27,7 +27,7 @@
   margin-right: 134px;
   margin-left: 134px;
   padding: 1em 2em;
-  background-color: white;
+  background-color: var(--color-background);
 }
 
 .v-footer {

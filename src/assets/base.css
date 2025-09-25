@@ -94,7 +94,10 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: normal;
+}
+
+h1, h2 {
+  font-weight: bold;
 }
 
 h1 {
@@ -103,6 +106,10 @@ h1 {
 
 h2 {
   font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
 }
 
 h4 {

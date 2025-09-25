@@ -9,7 +9,7 @@ const reports = [
     title: 'Narozeniny',
     icon: 'mdi-email-outline',
     category: 'Selecro',
-    description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discoveredand scrambled it to make a type s and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining ',
+    description: 'Contrary to <a href="/profile"> popular belief,</a> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discoveredand scrambled it to make a type s and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining ',
     date: "21.10.2024",
   },
   {
@@ -128,24 +128,42 @@ const clickOnNotification = (report: any) => {
                   <h4>{{ r.title }}</h4>
                 </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="truncate-2">{{ r.description }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="truncate-2" v-html="r.description"></v-list-item-subtitle>
             </v-list-item>
           </template>
         </v-list>
       </div>
   </v-container>
 
-  <v-dialog v-model="dialog" max-width="500">
-    <v-card>
-      <v-card-title class="text-h6">
-        {{ selectedReport?.title }}
-      </v-card-title>
-      <v-card-text>
-        {{ selectedReport?.description }}
+  <v-dialog
+    v-model="dialog"
+    max-width="763"
+  >
+    <v-card
+      class="pa-10"
+      color="var(--primary-color)"
+      rounded="lx"
+    >
+      <v-card-text class="d-flex justify-space-between pa-0">
+        <h5>{{ selectedReport?.date }}</h5>
+        <Icon icon="bxs:trash" height="26"/>
       </v-card-text>
-      <v-card-actions>
+      <v-card-title class="text-h6 pt-3 d-flex align-center pl-0 ml-0">
+        <v-card-item>
+          <img v-if="selectedReport?.category === 'Selecro'" src="/public/logo-without-bg.png" class="icon-on-the-dialog"/>
+
+          <Icon v-else-if="selectedReport?.category === 'System'" icon="material-symbols:build-outline" class="icon-on-the-dialog"/>
+
+          <Icon v-else icon="mdi:account-outline" class="icon-on-the-dialog"/>
+        </v-card-item>
+        <h4>{{ selectedReport?.title }}</h4>
+      </v-card-title>
+      <v-card-text class="pa-0 pb-3">
+        <h5 v-html="selectedReport?.description"></h5>
+      </v-card-text>
+      <v-card-actions class="pa-0">
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="dialog = false">Zavřít</v-btn>
+        <v-btn @click="dialog = false"><strong>Ok</strong></v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -179,6 +197,11 @@ const clickOnNotification = (report: any) => {
   height: 70px;
 }
 
+.icon-on-the-dialog {
+  height: 50px;
+  width: auto;
+}
+
 .truncate-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -196,6 +219,13 @@ const clickOnNotification = (report: any) => {
   background-color: rgba(0, 0, 0, 0.17);
   border-radius: 20px;
 }
+
+:deep(h5 a) {
+  color: #E494AC;
+  font-weight: bold;
+}
+
+
 /*
 .item-title div:last-child {
   font-size: small;

@@ -11,7 +11,7 @@ import SearchBar from '@/components/SearchBar.vue'
     <div class="left-part">
       <RouterLink to="/" class="home-router">
         <img src="/public/logo-without-bg.png" alt="Logo" class="logo-in-header" />
-        <h1>Selecro</h1>
+        <h3>SELECRO</h3>
       </RouterLink>
     </div>
 

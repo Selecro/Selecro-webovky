@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
+const props = defineProps<Props>();
+
 interface Props {
   title: string;
   text: string;
@@ -8,8 +10,6 @@ interface Props {
   pictureSide?: "left" | "right";
   buttonAction: string;
 }
-
-const props = defineProps<Props>();
 
 const isLeft = computed(() => props.pictureSide === "left");
 </script>
