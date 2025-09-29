@@ -1,16 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   /* paleta */
-<<<<<<< HEAD
-  --primary-light-color: #6AB5CD;
-  --primary-hover-light-color: #86D1EA;
-
-
-  --primary-dark-color: #86D1EA;
-  --primary-hover-dark-color: #6AB5CD;
-=======
->>>>>>> origin/dev
-
   --color-dark-mode-text: #ffffff;
   --color-light-mode-text: #181818;
 
@@ -24,6 +14,8 @@
   --secondary-button-light-color: #FFB1C7;
   --seconadary-hover-light-color: #E494AC;
   --secondary-border-light-color: #E494AC;
+
+  --a-color: #E494AC;
 
   --primary-div-dark-color: #B3EBFF;
   --primary-menu-dark-color: #86D1EA;
@@ -73,7 +65,8 @@
   --secondary-hover-color: var(--seconadary-hover-light-color);
   --secondary-border-color: var(--secondary-border-light-color);
 
-  --color-background: var(--vt-c-white);
+  --color-background: var(--background-light);
+
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
   --color-border: var(--vt-c-divider-light-2);
@@ -87,7 +80,8 @@ html[data-theme='dark'] {
   --primary-div-color: var(--primary-div-dark-color);
   --primary-hover-color: var(--primary-hover-dark-color);
 
-  --color-background: var(--vt-c-black);
+  --color-background: var(--background-dark);
+
   --color-background-soft: var(--vt-c-black-soft);
   --color-background-mute: var(--vt-c-black-mute);
   --color-border: var(--vt-c-divider-dark-2);
@@ -105,7 +99,7 @@ html[data-theme='dark'] {
 }
 
 body {
-  padding-top: 150px;
+  padding-top: 144px;
   color: var(--color-text);
   background: #E494AC;
   transition:
@@ -120,7 +114,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< HEAD
 h1, h2, h3 {
   font-family: var(--font-heading);
 }
@@ -147,11 +140,7 @@ h4 {
 
 h5 {
   font-size: 14px;
-=======
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), serif;
-  font-weight: normal;
->>>>>>> origin/dev
+
 }
 
 .icon-link {
@@ -162,13 +151,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custom-btn {
-  background-color: #FFB1C7;
+  background-color: var(--secondary-button-color);
   border-radius: 40px;
-  border: 1px solid #E494AC;
+  border: 1px solid var(--secondary-border-color);
   transition: none;
 }
 
 .custom-btn:hover {
-  background-color: #E494AC;
+  background-color: var(--secondary-hover-color);
   cursor: pointer;
+}
+
+.btn-a:hover {
+  background-color: var(--secondary-hover-color);
+  border: 1px solid var(--secondary-border-color);
 }

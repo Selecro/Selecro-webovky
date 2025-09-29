@@ -128,7 +128,9 @@ const clickOnNotification = (report: any) => {
                   <h4>{{ r.title }}</h4>
                 </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="truncate-2" v-html="r.description"></v-list-item-subtitle>
+              <v-list-item-subtitle class="truncate-2">
+                {{ r.description.replace(/<[^>]+>/g, '') }}
+              </v-list-item-subtitle>
             </v-list-item>
           </template>
         </v-list>
@@ -141,7 +143,7 @@ const clickOnNotification = (report: any) => {
   >
     <v-card
       class="pa-10"
-      color="var(--primary-color)"
+      color="var(--primary-div-color)"
       rounded="lx"
     >
       <v-card-text class="d-flex justify-space-between pa-0">
@@ -159,7 +161,7 @@ const clickOnNotification = (report: any) => {
         <h4>{{ selectedReport?.title }}</h4>
       </v-card-title>
       <v-card-text class="pa-0 pb-3">
-        <h5 v-html="selectedReport?.description"></h5>
+        <h5 class="full-desc" v-html="selectedReport?.description"></h5>
       </v-card-text>
       <v-card-actions class="pa-0">
         <v-spacer></v-spacer>
@@ -186,7 +188,7 @@ const clickOnNotification = (report: any) => {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: var(--primary-hover-color);
   border-radius: 12px;
   background-clip: padding-box;
 }
@@ -220,11 +222,9 @@ const clickOnNotification = (report: any) => {
   border-radius: 20px;
 }
 
-:deep(h5 a) {
-  color: #E494AC;
-  font-weight: bold;
+.full-desc a {
+  text-decoration: underline !important;
 }
-
 
 /*
 .item-title div:last-child {

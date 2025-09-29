@@ -6,7 +6,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <v-footer style="background-color: var(--primary-color)">
+  <v-footer style="background-color: var(--primary-menu-color)">
     <div class="left-part">
       <a href="https://cz.pinterest.com/selecro/_created/" target="_blank" rel="noopener">
         <Icon icon="meteor-icons:pinterest" height="38"/>

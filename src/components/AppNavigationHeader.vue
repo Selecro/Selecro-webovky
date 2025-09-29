@@ -23,7 +23,7 @@ const { t } = useI18n()
 
 <style scoped>
 header {
-  background-color: var(--primary-color);
+  background-color: var(--primary-menu-color);
   position: fixed;
   top: 0;
   left: 0;

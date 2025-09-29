@@ -53,7 +53,7 @@ input:focus {
 .search-panel {
   position: absolute;
   left: -270px;
-  background-color: #ffffff;
+  background-color: var(--color-background);
   padding: 0.5em;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);

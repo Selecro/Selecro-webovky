@@ -7,7 +7,7 @@ const post = ref(null)
 const username = ref("")
 const profilePic = ref("")
 
-const token = ""
+const token = "IGAAJJHQKCnMZABZAE9SVlhzVThpUnp4R2g1d0x4ZAmhsNGhIaFZAsSzR5VmtKRHJoMGkyUkEtRXpMOWZAYczFBSl82ZA0ttaG5FV3NSYU5nbkZAmNmM3UFpvUk9hdEk3NjVvQXloMzVWOEs4a3NjR0VhbUFjR3YzNThpWXdod3BmcGRNQQZDZD"
 
 async function getLatestPost() {
   const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=1&access_token=${token}`
@@ -51,7 +51,7 @@ onMounted(async () => {
       <div class="d-flex align-center justify-center">
         <v-btn
           :href="post.permalink"
-          class="w-full text-center block text-black"
+          class="w-full text-center block text-black btn-a"
           target="_blank"
           rel="noopener"
           variant="text"
@@ -102,10 +102,6 @@ onMounted(async () => {
 
 .ig-post-picture {
   width: 100%;
-}
-
-a:hover {
-  background-color: var(--primary-hover-color);
 }
 
 .truncate-3 {

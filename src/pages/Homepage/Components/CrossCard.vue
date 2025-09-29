@@ -17,7 +17,7 @@ const isLeft = computed(() => props.pictureSide === "left");
 <template>
   <v-card
     variant="flat"
-    color="var(--primary-color)"
+    color="var(--primary-div-color)"
     class="pa-10 mt-5 mb-5"
     :class="isLeft ? 'ml-auto' : 'mr-auto' "
     rounded="xl"
