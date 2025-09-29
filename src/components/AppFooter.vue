@@ -31,7 +31,7 @@ const { t } = useI18n()
 
     <div class="slogan-part">
       <h2>{{ t('message.slogan') }}</h2>
-      <p>© 2025 Selecro</p>
+      <h4>© 2025 Selecro</h4>
     </div>
 
     <div class="right-part">

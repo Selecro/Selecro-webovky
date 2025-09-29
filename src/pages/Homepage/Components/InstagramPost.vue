@@ -7,7 +7,7 @@ const post = ref(null)
 const username = ref("")
 const profilePic = ref("")
 
-const token = "IGAAJJHQKCnMZABZAE9SVlhzVThpUnp4R2g1d0x4ZAmhsNGhIaFZAsSzR5VmtKRHJoMGkyUkEtRXpMOWZAYczFBSl82ZA0ttaG5FV3NSYU5nbkZAmNmM3UFpvUk9hdEk3NjVvQXloMzVWOEs4a3NjR0VhbUFjR3YzNThpWXdod3BmcGRNQQZDZD"
+const token = ""
 
 async function getLatestPost() {
   const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=1&access_token=${token}`
@@ -61,7 +61,7 @@ onMounted(async () => {
       </div>
     </div>
     <div v-else>
-      Příspěvěk není k dispozici
+      Instagramový příspěvěk není k dispozici
     </div>
   </div>
 </template>

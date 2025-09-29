@@ -33,4 +33,11 @@
 .v-footer {
   margin-top: auto;
 }
+
+@media (max-width: 800px) {
+  .content {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
 </style>

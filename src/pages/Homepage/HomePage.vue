@@ -14,11 +14,11 @@ const { t } = useI18n()
   </div>
   <div class="content-bar pt-3 pb-3">
     <v-row>
-      <v-col cols="8">
+      <v-col cols="12" md="7">
         <NewsBar />
       </v-col>
 
-      <v-col cols="4">
+      <v-col cols="12" md="4" class="mr-3 ml-3">
         <InstagramPost />
       </v-col>
     </v-row>
