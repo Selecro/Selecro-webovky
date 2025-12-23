@@ -20,9 +20,9 @@
   "dependencies": {
     "@iconify/vue": "^5.0.0",
     "pinia": "^3.0.4",
-    "vue-i18n": "^11.2.2",
+    "vue-i18n": "^11.2.7",
     "vue": "^3.5.25",
-    "vue-router": "^4.6.3"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
@@ -37,7 +37,7 @@
     "cypress": "^15.8.1",
     "eslint": "^9.39.1",
     "eslint-plugin-cypress": "^5.2.0",
-    "eslint-plugin-vue": "~10.6.0",
+    "eslint-plugin-vue": "~10.6.2",
     "jiti": "^2.6.1",
     "jsdom": "^27.3.0",
     "npm-run-all2": "^8.0.4",
@@ -47,6 +47,6 @@
     "vite": "7.3.0",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vitest": "^4.0.13",
-    "vue-tsc": "^3.1.5"
+    "vue-tsc": "^3.2.1"
   }
 }
