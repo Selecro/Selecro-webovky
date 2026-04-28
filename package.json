@@ -21,7 +21,7 @@
     "@iconify/vue": "^5.0.0",
     "pinia": "^3.0.4",
     "vue-i18n": "^11.3.1",
-    "vue": "^3.5.30",
+    "vue": "^3.5.33",
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.1",
-    "cypress": "^15.14.0",
+    "cypress": "^15.14.1",
     "eslint": "^10.2.0",
     "eslint-plugin-cypress": "^6.3.0",
     "eslint-plugin-vue": "^10.8.0",
