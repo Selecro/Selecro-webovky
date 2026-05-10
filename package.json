@@ -20,7 +20,7 @@
   "dependencies": {
     "@iconify/vue": "^5.0.0",
     "pinia": "^3.0.4",
-    "vue-i18n": "^11.3.1",
+    "vue-i18n": "^11.4.0",
     "vue": "^3.5.33",
     "vue-router": "^5.0.4"
   },
@@ -32,14 +32,14 @@
     "@vitest/eslint-plugin": "^1.6.13",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.7.0",
-    "@vue/test-utils": "^2.4.6",
+    "@vue/test-utils": "^2.4.10",
     "@vue/tsconfig": "^0.9.1",
     "cypress": "^15.14.1",
     "eslint": "^10.2.1",
-    "eslint-plugin-cypress": "^6.3.0",
+    "eslint-plugin-cypress": "^6.4.0",
     "eslint-plugin-vue": "^10.8.0",
     "jiti": "^2.6.1",
-    "jsdom": "^29.1.0",
+    "jsdom": "^29.1.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.8.3",
     "start-server-and-test": "^3.0.2",
@@ -47,6 +47,6 @@
     "vite": "^8.0.8",
     "vite-plugin-vue-devtools": "^8.1.1",
     "vitest": "^4.1.5",
-    "vue-tsc": "^3.2.6"
+    "vue-tsc": "^3.2.8"
   }
 }
