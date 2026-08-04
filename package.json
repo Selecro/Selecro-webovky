@@ -48,5 +48,9 @@
     "vite-plugin-vue-devtools": "^8.2.1",
     "vitest": "^4.1.10",
     "vue-tsc": "^3.3.9"
+  },
+  "allowScripts": {
+    "cypress@15.18.1": true,
+    "esbuild@0.28.1": true
   }
 }
