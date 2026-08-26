@@ -50,7 +50,7 @@
     "vue-tsc": "^3.3.11"
   },
   "allowScripts": {
-    "cypress@15.18.1": true,
-    "esbuild@0.28.1": true
+    "cypress": true,
+    "esbuild": true
   }
 }
